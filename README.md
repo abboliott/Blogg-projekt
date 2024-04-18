@@ -15,7 +15,7 @@ Vi har valt att göra en uppgift som är en sorts "skattjakt". Man går ska lös
 2. Laga QR koden genom att lägga till ett hörn, och skanna den för att komma in på en hemsida.  
 3. På Hemsidan finns det en gif med en hemlig url till nästa del av sidan
 4. Dela upp gifen i bilder för att komma åt den nya url:en
-5. Den nya URL:en leder till en sorts affär på hemsidan
+5. Den nya URL:en leder till en sorts affär på hemsidan, ex:
    <br>
    <img src="https://github.com/abb21timsjo/FlagUppgift/assets/92145432/81da4451-a1ae-4d81-ba05-45e5bbe22db4" width="400">
    
