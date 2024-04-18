@@ -5,6 +5,7 @@
 ## QR code Flagg jakt
 ---
 1. Bild på en trasig QR kod
+   <br>
    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/QR_Code_Damaged.jpg" width="200">
    
 
