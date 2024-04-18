@@ -1,9 +1,9 @@
 # FlagUppgift
 ---
-###Oliver och Tim 
+### Oliver och Tim 
 
-##QR code Flagg jackt
-
+## QR code Flagg jackt
+---
 1. Bild på en trasig QR kod
 2. Nå en hemsida genom trasig QR kod
 3. På Hemsidan finns det en gif med en hemlig url till en ny del av sidan
