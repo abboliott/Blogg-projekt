@@ -19,5 +19,6 @@ Vi har valt att göra en uppgift som är en sorts "skattjakt". Man går ska lös
 6. För att få flaggan måste man köpa något i affären som kosta mer än vad man har. Då måste man ändra i en cookies-inställning för att få tillräckligt med pengar.
 7. Köp sen flaggan och vinn! :)
 
-
+## Tilltänkt svårighetsnivå
+Våran uppgift baseras på tidigare års uppgifter från säkerhets-sm och om man då har gjort någon/några av de uppgifterna kan man nog lösa våran uppgift ganska lätt. Svårigheten kommer mestadels från att flaggan ligger bakom ganska många steg. Man måste göra en sak för att få göra nästa sak, och så vidare för att till sist nå flaggan. Därför sätter vi svårighetsnivån på 0.7, antagligen kan det vara 1, men alla kanske inte orkar göra alla stegen.
 
