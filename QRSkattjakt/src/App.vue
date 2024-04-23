@@ -1,35 +1,20 @@
-
-
 <template>
-  <div>
-    <div>
-      <img :src="imageUrl" alt="Image" />
-    </div>
-    <div>
-      <button @click="downloadImage">Download Image</button>
-    </div>
-  </div>
+  
+      <!-- Your main content goes here -->
+      <router-view /> <!-- This will render the component for the current route -->
+      
 </template>
 
 <script>
-import image from './assets/shocked-surprised.gif';
+import ImageDownload from './assets/shocked-surprised.gif'; // Import the ImageDownload component
+
 export default {
-  data() {
-    return {
-      imageUrl: image 
-    };
+  components: {
+    ImageDownload, // Register the ImageDownload component
   },
-  methods: {
-    downloadImage() {
-      // Create a new anchor element
-      const link = document.createElement('a');
-      // Set the href attribute to the image source
-      link.href = this.imageUrl;
-      // Set the download attribute to specify the file name
-      link.download = 'image.jpg'; // Change 'image.jpg' to your desired file name
-      // Simulate a click on the anchor element
-      link.click();
-    }
-  }
 };
 </script>
+
+<style>
+/* Your global styles go here */
+</style>
