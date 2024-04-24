@@ -1,12 +1,13 @@
 <template>
     <div class="background">
       <div class="catbild">'
+        <div class="alien">
+          <!-- <img :src="imageUrl" alt="Image" /> -->
+        </div>
         <div class="warningheader">
             Oops Something Went Wrong!
         </div>
-        <div class="alien">
-          <img :src="imageUrl" alt="Image" />
-        </div>
+        
         <!-- <div class="download">
           <button @click="downloadImage">Download Image</button>
         </div> -->
@@ -55,18 +56,25 @@
   .alien {
     display: flex;
     justify-content: center;
+    background-image: url(../assets/ezgif.com-animated-gif-maker.gif);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100vh;
+    width: 100%;
+    position: relative;
     
   }
   
-  .alien img {
-    width: 50%; /* Set the width to 50% of its container */
+  <!-- .alien img {
+    width: full; /* Set the width to 50% of its container */
     height: auto; /* Let the height adjust proportionally */
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3); /* Add shadow to the image */
-}
+} -->
     .warningheader {
         font-size: 60px;
         margin-bottom: 20px;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        position: absolute;
     }
   </style>
   

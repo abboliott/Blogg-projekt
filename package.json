@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@vueuse/integrations": "^10.9.0"
+  }
+}

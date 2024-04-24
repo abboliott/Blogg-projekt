@@ -71,10 +71,20 @@
     </div>
   </template>
 <script>
-export default {
+import { defineComponent } from 'vue'
+import { useCookies } from '@vueuse/integrations/useCookies'
+
+export default defineComponent({
+  setup() {
+    const cookies = useCookies(['locale'])
+    cookies.set('locale', 600)
+    return {
+      cookies,
+    }
+  },
   data() {
     return {
-      totalAmount: 10000000000, // Initial total amount
+      totalAmount: this.cookies.get('locale'), // Initial total amount
       purchases: [], // Array to store purchases
     };
   },
@@ -83,6 +93,7 @@ export default {
       if (this.totalAmount >= 10) {
         this.totalAmount -= 10; // Deduct $10 from the total amount
         this.purchases.push(10); // Add the purchase amount to the purchases array
+
        
       } else {
         console.log('Insufficient funds!');
@@ -106,7 +117,7 @@ export default {
     }
 
   }
-};
+});
 </script>
 <style>
     .header {
