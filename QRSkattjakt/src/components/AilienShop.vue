@@ -71,20 +71,25 @@
     </div>
   </template>
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent, watch } from 'vue'
 import { useCookies } from '@vueuse/integrations/useCookies'
+
 
 export default defineComponent({
   setup() {
-    const cookies = useCookies(['locale'])
-    cookies.set('locale', 600)
+    const cookies = useCookies(['money'])
+    cookies.set('money', cookies.get('money'))
+    const totalAmount = cookies.get('money')// Initial total amount
     return {
       cookies,
+      totalAmount
     }
   },
   data() {
+    watch(this.totalAmount, (newValue) => {
+      cookies.set('money', newValue);
+    });
     return {
-      totalAmount: this.cookies.get('locale'), // Initial total amount
       purchases: [], // Array to store purchases
     };
   },
