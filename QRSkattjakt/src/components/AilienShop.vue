@@ -1,14 +1,14 @@
 <template>
-    <div>
+    <div class="backgrounddiv">
         <div class="header">
             <div class="headertext">
-                Alien Shop
+                Exclusive Alien Shop
             </div> 
         </div>
 
         <div>
             <div class="moneytext">
-                your money {{ totalAmount }}$
+                Your Money: {{ this.cookies.get('money') }}$
             </div>
         </div>
 
@@ -66,55 +66,52 @@
         {{ purchase.text }}: {{ purchase.amount }}$
       </li>
     </ul>
-        <p v-else>No purchases yet</p>
+        <p class="hej" v-else>No purchases yet</p>
 
     </div>
   </template>
 <script>
-import { defineComponent, watch } from 'vue'
+import { defineComponent } from 'vue'
 import { useCookies } from '@vueuse/integrations/useCookies'
-
 
 export default defineComponent({
   setup() {
     const cookies = useCookies(['money'])
-    cookies.set('money', cookies.get('money'))
-    const totalAmount = cookies.get('money')// Initial total amount
+    cookies.set('money', 700)
     return {
       cookies,
-      totalAmount
     }
   },
   data() {
-    watch(this.totalAmount, (newValue) => {
-      cookies.set('money', newValue);
-    });
     return {
+      totalAmount: 500, // Initial total amount
       purchases: [], // Array to store purchases
     };
   },
   methods: {
     takeMoney10() {
-      if (this.totalAmount >= 10) {
-        this.totalAmount -= 10; // Deduct $10 from the total amount
+      if (this.cookies.get('money') >= 10) {
+        this.cookies.set('money', this.cookies.get('money')-10)
+        this.totalAmount = this.cookies.get('money')
         this.purchases.push(10); // Add the purchase amount to the purchases array
-
        
       } else {
         console.log('Insufficient funds!');
       }
     },
     takeMoney01() {
-        if (this.totalAmount >= 1) {
-        this.totalAmount -= 1; // Deduct $10 from the total amount
+        if (this.cookies.get('money') >= 1) {
+        this.cookies.set('money',this.cookies.get('money')-1); // Deduct $10 from the total amount
+        this.totalAmount = this.cookies.get('money')
         this.purchases.push(10);
       } else {
         console.log('Insufficient funds!');
       }
     },
     takeMoneyflag() {
-        if (this.totalAmount >= 1000000) {
-        this.totalAmount -= 1000000; // Deduct $10 from the total amount
+        if (this.cookies.get('money') >= 1000000) {
+        this.cookies.set('money', this.cookies.get('money')-1000000); // Deduct $10 from the total amount
+        this.totalAmount = this.cookies.get('money')
         this.purchases.push({ text: '210s{BreakingBadIsGood}', amount: 1000000 });
       } else {
         console.log('Insufficient funds!');
@@ -125,13 +122,23 @@ export default defineComponent({
 });
 </script>
 <style>
+    .hej {
+        font-size: 25px;
+        font-weight: bold;
+        padding-bottom:1%;
+    }
+    .backgrounddiv {
+        background-color:rgb(211, 17, 42);
+        height:100%;
+        margin-bottom:-10%;
+    }
     .header {
         width: 100%;
-        
         height: 100px;
         align-content: center;
         text-align: center;
         box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3); /* Add shadow to the image */
+        background-color: rgb(44, 66, 42);
     }
     .headertext {
         
@@ -145,7 +152,8 @@ export default defineComponent({
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background-color: white;
+        background-color: rgb(58, 70, 137);
+        border-radius: 15px;
     }
     .boxcollection{
         flex-direction: row;
@@ -179,6 +187,8 @@ export default defineComponent({
     .buybutton {
         width: 100px;
         height: 30px;
+        background-color: rgb(161, 131, 154);
+        border-radius: 7px;
     }
     .buy {
         display: flex;
