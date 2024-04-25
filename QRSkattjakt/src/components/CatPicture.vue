@@ -1,6 +1,6 @@
 <template>
-    <div class="background">
-      <div class="catbild">'
+    <div class="background"><img :src="imageUrl" class="skib">
+      <div class="catbild">
         <div class="alien">
           <!-- <img :src="imageUrl" alt="Image" /> -->
         </div>
@@ -39,6 +39,10 @@
   body {
     margin:0;
   }
+  .skib {
+    position: absolute;
+    width:100%;
+  }
   .catbild {
     display: flex;
     justify-content: center;
@@ -49,14 +53,12 @@
   }
   
   .background {
-    
     height: 100vh;
   }
   
   .alien {
     display: flex;
     justify-content: center;
-    background-image: url(../assets/ezgif.com-animated-gif-maker.gif);
     background-repeat: no-repeat;
     background-size: 100%;
     height: 100vh;
@@ -71,10 +73,17 @@
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3); /* Add shadow to the image */
 } -->
     .warningheader {
-        font-size: 60px;
-        margin-bottom: 20px;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        position: absolute;
+      background-color:rgba(5, 5, 5, 0.716);
+      color: white;
+      font-size: 60px;
+      margin-bottom: 20px;
+      top: 10px;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      position: absolute;
+      border-style:solid;
+      border-radius: 15px;
+      border-width:thick;
+      border-color:rgba(5, 5, 5, 0.716);
     }
   </style>
   
