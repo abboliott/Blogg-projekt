@@ -5,7 +5,7 @@
 ## Den svunna QR-kodens skattjakt
 ---
 ## Besikrivning av uppgift 
-Vi har valt att göra en uppgift som är en sorts "skattjakt". Man går ska lösa flera mindre utmaningar som sen leder till flaggan. Lös första uppgiften, för att få något som leder till nästa uppgift, och så vidare, tills man löst sista uppgiften och kan nå flaggan.  
+Vi har valt att göra en uppgift som är en sorts "skattjakt". Man ska lösa flera mindre utmaningar som sen leder till flaggan. Lös första uppgiften, för att få något som leder till nästa uppgift, och så vidare, tills man löst sista uppgiften och kan nå flaggan.  
 
  ## Grov lösningsskiss
 1. Man börjar med att få en bild på en trasig QR kod, ex:
