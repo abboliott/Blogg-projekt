@@ -93,7 +93,7 @@ export default defineComponent({
       if (this.cookies.get('money') >= 10) {
         this.cookies.set('money', this.cookies.get('money')-10)
         this.totalAmount = this.cookies.get('money')
-        this.purchases.push(10); // Add the purchase amount to the purchases array
+        this.purchases.push(({ text: 'Death Ray', amount: 10 })); // Add the purchase amount to the purchases array
        
       } else {
         console.log('Insufficient funds!');
@@ -103,7 +103,7 @@ export default defineComponent({
         if (this.cookies.get('money') >= 1) {
         this.cookies.set('money',this.cookies.get('money')-1); // Deduct $10 from the total amount
         this.totalAmount = this.cookies.get('money')
-        this.purchases.push(10);
+        this.purchases.push({ text: 'Friend', amount: 1 });
       } else {
         console.log('Insufficient funds!');
       }
