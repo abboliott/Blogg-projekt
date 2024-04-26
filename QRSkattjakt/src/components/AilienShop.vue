@@ -74,6 +74,17 @@
 import { defineComponent } from 'vue'
 import { useCookies } from '@vueuse/integrations/useCookies'
 
+const decrypt = (salt, encoded) => {
+  const textToChars = (text) => text.split("").map((c) => c.charCodeAt(0));
+  const applySaltToChar = (code) => textToChars(salt).reduce((a, b) => a ^ b, code);
+  return encoded
+    .match(/.{1,2}/g)
+    .map((hex) => parseInt(hex, 16))
+    .map(applySaltToChar)
+    .map((charCode) => String.fromCharCode(charCode))
+    .join("");
+};
+
 export default defineComponent({
   setup() {
     const cookies = useCookies(['money'])
@@ -112,12 +123,11 @@ export default defineComponent({
         if (this.cookies.get('money') >= 1000000) {
         this.cookies.set('money', this.cookies.get('money')-1000000); // Deduct $10 from the total amount
         this.totalAmount = this.cookies.get('money')
-        this.purchases.push({ text: '210s{BreakingBadIsGood}', amount: 1000000 });
+        this.purchases.push({ text: decrypt("makaron", "474445060e370710141e1c1b123714113c06321a1a1108"), amount: 1000000 });
       } else {
         console.log('Insufficient funds!');
       }
     }
-
   }
 });
 </script>
